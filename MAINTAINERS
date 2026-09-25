@@ -1,0 +1,14 @@
+[MAINTAINERS = OWNERS] {
+     [me = dev12124] = {
+          *.organization = 'QMX Corporation',
+          *.org-link = 'https://github.com/QMX-Corporation/'
+     },
+     /** Your authors-ring local: */
+     
+}
+
+[WARNING] = {
+  [SECURITY([!])] {
+      "Not show this file"
+  }
+}
