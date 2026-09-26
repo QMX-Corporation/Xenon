@@ -1,3 +1,7 @@
+/** MIT License.
+  Copyright (C) QMX Corporation. */
+
+
 module IF (
   // Clock
   input logic clk,
@@ -27,10 +31,10 @@ always_ff @(posedge clk) begin
   else begin
       /** 1. Write the Datas */
       case (chunck_counter) 
-           2'b00:bReg[31:0] <= mem_data;
-           2'b01:bReg[63:32] <= mem_data;
-           2'b10:bReg[95:64] <= mem_data;
-           2'b11:bReg[127:96] <= mem_data;
+           2'b00: bReg[31:0]   <= mem_data;
+           2'b01: bReg[63:32]  <= mem_data;
+           2'b10: bReg[95:64]  <= mem_data;
+           2'b11: bReg[127:96] <= mem_data;
       endcase
       /** 2. In Cycle Increment (1, 2...),
           increment the Counter */

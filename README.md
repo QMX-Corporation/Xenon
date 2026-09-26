@@ -22,9 +22,30 @@
 ## ARCHITECTURE
 ### WHAT IS THE ARCHITECTURE?
 * **Native 64-Bit**
-* **Registers: idf, rax, rbx, rcx, rdx, rdi, r8, r9, r10, r11, r12, r13, r14, r15, r8d and r9d**
+* **Registers: idf, rax, rbx, rcx, rdx, rdi, r8, r9, r10, r11, r12, r13, r14, r15, r8d, r9d and FLAGS**
 * **The Instructions: x86_64.**
 * **Added Instructions: movs.**
+* **Flags: 4'b1111 for 'Invalid Instruction', 4'b0000 for Success.**
+
+---
+
+### REGISTERS WIDTH SPECIFICATION
+
+* **All registers in the Xenon architecture, including the sub-registers r8d and r9d, operate natively at 64-bit width ([63:0]).**
+* **This architectural design choice eliminates sign-extension overhead and ensures maximum throughput during instruction decoding and execution.**
+
+---
+
+## CUSTOM OPCODES (XENON EXCLUSIVE)
+### THE MOVS INSTRUCTION ENCODING
+
+* **Instruction:** `movs`
+* **Binary Opcode:** `00110100 10011001 01000010`
+* **Hexadecimal Mapping:** `0x001000`, `0x00500`, `0x1000`, `0x15000`
+* **Size 24 Bytes (What the PC will receive): Equivalent with 5'b11000**
+* **Code (What the ALU will receive): Equivalent with 4'b0010.**
+* **The Code with the Selecioned Register: Equivalent with 103:101 in the SystemVerilog.**
+* **The others instructions (with mov, add etc), is search in the Google with Intel! KKK.**
 
 ---
 

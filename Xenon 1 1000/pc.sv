@@ -1,9 +1,13 @@
+/** MIT License.
+  Copyright (C) QMX Corporation. */
+
+
 module PC (
   // Control Flags 
   input logic clk,
   input logic reset,
   // Signal Entrie
-  input logic [3:0] instr_len,
+  input logic [4:0] instr_len,
   output logic [63:0] idf_target,
   // Data Flow (Input)
   input logic [63:0] next_pc,

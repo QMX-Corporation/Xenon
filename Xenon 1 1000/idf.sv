@@ -1,3 +1,7 @@
+/** MIT License.
+  Copyright (C) QMX Corporation. */
+
+  
 module IDF (
   // The Clock
   input logic clk,
